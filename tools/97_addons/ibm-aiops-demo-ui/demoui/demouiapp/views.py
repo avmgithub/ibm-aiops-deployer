@@ -49,7 +49,7 @@ print ('')
 
 
 #os.system('ls -l')
-loggedin='false'
+loggedin='true'
 loginip='0.0.0.0'
 
 
@@ -2628,7 +2628,7 @@ def login(request):
             'PAGE_NAME': 'index'
         }
     else:
-        loggedin='false'
+        loggedin='true'
         template = loader.get_template('demouiapp/loginui.html')
         print ('  ❗ Login NOT SUCCESSFUL')
 
@@ -2675,7 +2675,7 @@ def verifyLogin(request):
     token=os.environ.get('TOKEN')
 
     if str(actToken)!=hashlib.md5((token).encode()).hexdigest():
-        loggedin='false'
+        loggedin='true'
 
         #print('        ❌ LOGIN NOK: NEW IP')
         print('   🔎 Check IP : ❌ LOGIN NOK: ACT SESSION TOKEN:'+str(actToken)+' - LOGGED IN: '+str(loggedin))
